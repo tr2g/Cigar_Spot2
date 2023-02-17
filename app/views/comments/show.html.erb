@@ -4,4 +4,7 @@
   <p>本文：<%= @comment.body %></p>
   <p>ユーザーネーム：<%= @comment.user.name %></p>
   <p>投稿日：<%= @comment.created_at.strftime('%Y/%m/%d') %></p>
+  <% if @comment.user == current_user %>
+    <%= link_to "削除", comment_path(@comment), method: :delete %>
+  <% end %>
 </div>
