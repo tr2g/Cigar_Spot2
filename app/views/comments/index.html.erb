@@ -1,2 +1,12 @@
-<h1>Comments#index</h1>
-<p>Find me in app/views/comments/index.html.erb</p>
+<h1>コメント一覧</h1>
+
+<% @comments.each do |comment| %>
+<div>
+  <p>ユーザープロフ画：<%= image_tag 'no_image.jpg' %></p>
+  <p>本文：
+    <%= link_to comment_path(comment.id) do %>
+      <%= comment.body %>
+    <% end %></p>
+  <p>ユーザーネーム：<%= comment.user.name %></p>
+</div>
+<% end %>
