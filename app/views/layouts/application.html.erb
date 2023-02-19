@@ -27,9 +27,6 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to '投稿フォーム', new_comment_path, class: 'link nav-link text-secondary' %>
-                </li>
-                <li>
                   <%= link_to "ログアウト", destroy_user_session_path, class: 'link nav-link text-secondary', method: :delete %>
                 </li>
               <% else %>
