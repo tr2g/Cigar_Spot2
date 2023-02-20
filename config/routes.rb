@@ -14,9 +14,4 @@ Rails.application.routes.draw do
     resource :comments, only: [:create, :destroy]
   end
 
-  #ゲストログイン用ルーティング
-  devise_scope :user do
-    post 'user/guest_sign_in', to: 'users#guest_sign_in'
-  end
-
 end

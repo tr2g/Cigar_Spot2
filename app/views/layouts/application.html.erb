@@ -22,17 +22,9 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li>
-                  <% if current_user.name != "guestuser" %>
-                    <%= link_to 'マイページ', user_path(current_user), class: 'btn btn-primary nav-link mr-3' %>
-                  <% end %>
-                </li>
-                <li>
                   <%= link_to "ログアウト", destroy_user_session_path, class: 'btn btn-primary nav-link', method: :delete %>
                 </li>
               <% else %>
-                <li>
-                  <%= link_to "ゲストログイン", user_guest_sign_in_path, class: 'btn btn-primary nav-link', method: :post %>
-                </li>
             <% end %>
           </div>
         </div>
