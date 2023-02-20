@@ -19,6 +19,14 @@
     <div class='col-md-8 offset-md-1'>
       <h2>お店を探す</h2>
       ※ホットペッパーAPIを使って検索したい
+      <%= form_with model: @shop, url: shops_search_path, method: :post, local: true do |f| %>
+         <div class="form-group">
+          <%= f.text_field :keyword, class: "form-control", :placeholder => "地名や駅名を入力してください" %>
+        </div>
+        <div class="field">
+          <%= f.submit "検索する", class: "btn btn-primary btn-sm" %>
+        </div>
+      <% end %>
       <hr class="hr1">
       <h2>お気に入りのお店一覧</h2>
       <hr class="hr2">
