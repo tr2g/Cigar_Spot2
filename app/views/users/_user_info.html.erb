@@ -1,0 +1,11 @@
+<h2 class='mt-3'>プロフィール</h2>
+  <%= image_tag @user.get_profile_image, size: '100x100' %>
+	  <p><%= @user.name %></p>
+	  <p>生年月日：<%= @user.birthday %></p>
+    <p>お気に入りのお店：<%= @user.favorites.count %> 件</p>
+    <p><% if @user == current_user %>
+      <%= link_to edit_user_path(@user), class: "btn btn-outline-secondary btn-block" do %>
+      <i class="fas fa-user-cog"></i> 編集
+      <% end %>
+      <% end %>
+    </p>

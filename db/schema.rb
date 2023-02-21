@@ -58,6 +58,16 @@ ActiveRecord::Schema.define(version: 2023_02_19_032805) do
 
   create_table "shops", force: :cascade do |t|
     t.string "name"
+    t.string "logo_image"
+    t.string "address"
+    t.string "station"
+    t.string "genre"
+    t.string "access"
+    t.string "pc_s"
+    t.string "mobile_s"
+    t.string "open"
+    t.string "close"
+    t.string "url_pc"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
