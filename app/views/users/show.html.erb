@@ -1,16 +1,17 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
     <!--ユーザープロフィール情報-->
-    <div class='col-md-3 border border-info border-3 rounded'>
+    <div class='col-md-3 border border-3 border-info rounded'>
       <%= render 'user_info', user: @user %>
     </div>
 
       <!--お店検索など-->
     <div class='col-md-8 offset-md-1'>
       <h2>お店を探す</h2>
-      <%= form_with model: @shop, url: shops_search_path, method: :get, local: true do |f| %>
+      <%#= link_to %>
+      <%= form_with url: shops_search_path, method: :get, local: true do |f| %>
          <div class="form-group">
-          <%= f.text_field :keyword, class: "form-control", :placeholder => "例：「新宿区歌舞伎町」,「東京駅」etc..." %>
+          <%= f.text_field :keyword, class: "form-control", :placeholder => "店名、住所、駅名、お店ジャンルなどのフリーワード検索が可能です。" %>
         </div>
         <div class="field">
           <%= f.submit "検索する", class: "btn btn-primary btn-sm" %>
