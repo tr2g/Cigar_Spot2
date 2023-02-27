@@ -1,1 +1,30 @@
 <h1>検索結果の詳細</h1>
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <!--ユーザープロフィール情報-->
+    <div class='col-md-3 border border-info border-3 rounded'>
+      <%= render 'users/user_info', user: @user %>
+    </div>
+
+    <!--検索結果-->
+    <div class='col-md-8 offset-md-1'>
+      <h2>店舗詳細</h2>
+      <hr class="hr1"> <br>
+      <%= image_tag shop[:logo_image] %> <!--画像表示させたいなら←使う-->
+      <table class='table'>
+        <tr>
+          <th>店名</th>
+          <td><%= shop[:name] %></td>
+          <%# shop[:genre].each do |_, v| %><%#= v %><%# end %>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td><%= shop[:address] %></td>
+        </tr>
+        <tr>最寄り駅</tr>
+        <td><%= shop[:station_name] %></td>
+      </table>
+      <%= debug @results %>
+    </div>
+  </div>
+</div>

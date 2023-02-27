@@ -18,7 +18,7 @@
         </tr>
         <% @results.each do |shop| %>
           <tr>
-            <td><%= shop[:name] %></td>
+            <td><%= link_to shop[:name], shop[:urls][:pc] %></td>
             <td><%= shop[:address] %></td>
             <td><%= shop[:station_name] %></td>
             <%#= image_tag shop[:logo_image] %> <!--画像表示させたいなら←使う-->
